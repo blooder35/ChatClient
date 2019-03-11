@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane layoutY="100.0" prefHeight="380.0" prefWidth="640.0" style="-fx-background-color: #ffffffff;">
+            <children>
+                <Button fx:id="loginButton" layoutX="279.0" layoutY="286.0" mnemonicParsing="false" text="Login">
+                    <font>
+                        <Font name="Arial Bold" size="20.0" />
+                    </font>
+                </Button>
+                <TextField fx:id="loginText" layoutX="199.0" layoutY="114.0" prefHeight="37.0" prefWidth="242.0" promptText="Login" />
+                <PasswordField fx:id="passwordText" layoutX="199.0" layoutY="182.0" prefHeight="37.0" prefWidth="242.0" promptText="Password" />
+                <Label layoutX="203.0" layoutY="43.0" text="Авторизация" textAlignment="CENTER">
+                    <font>
+                        <Font name="Arial Bold" size="36.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <Label layoutX="220.0" layoutY="30.0" style="-fx-border-color: #000000;" text="SimpleChat" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="Arial Bold" size="36.0" />
+            </font>
+        </Label>
+        <Button fx:id="cancelButton" layoutX="532.0" layoutY="21.0" mnemonicParsing="false" text="Cancel">
+            <font>
+                <Font name="Arial Bold" size="20.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
