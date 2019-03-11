@@ -106,11 +106,15 @@ public class ChatWindowController {
 
   void checkAndSendMessage(String message) {
     if (!message.isEmpty()) {
+      Date date=new Date();
       SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-      String time = dateFormat.format(new Date());
+      SimpleDateFormat dateFormatToSend = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+      String timeToSend = dateFormatToSend.format(date);
+      System.out.println(timeToSend);
+      String time = dateFormat.format(date);
       cm.getSession().write("message " + time + " " + message);
       userInputField.setText("");
-      textAreaField.appendText(cm.getSession().getAttribute("login") + " [" + time + "]:\n" + message + "\n\n");
+      textAreaField.appendText(cm.getSession().getAttribute("login") + " [" + timeToSend + "]:\n" + message + "\n\n");
     }
   }
 
