@@ -107,8 +107,8 @@ public class ChatWindowController {
   void checkAndSendMessage(String message) {
     if (!message.isEmpty()) {
       Date date=new Date();
-      SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-      SimpleDateFormat dateFormatToSend = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+      SimpleDateFormat dateFormatToSend = new SimpleDateFormat("HH:mm:ss");
+      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
       String timeToSend = dateFormatToSend.format(date);
       System.out.println(timeToSend);
       String time = dateFormat.format(date);

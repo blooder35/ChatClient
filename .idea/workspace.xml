@@ -8,7 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="68064758-749c-4113-960f-30704f9df7e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ChatClient_jar/ChatClient.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ChatClient_jar/ChatClient.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ChatWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChatWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ChatWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ChatWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoginScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LoginScreenController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -44,8 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ChatWindowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="110" column="74" selection-start-line="110" selection-start-column="74" selection-end-line="110" selection-end-column="74" />
+            <state relative-caret-position="230">
+              <caret line="112" column="37" lean-forward="true" selection-start-line="112" selection-start-column="37" selection-end-line="112" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -220,7 +223,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="C:/Programming/AndroidSDK" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552310711533" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552311123564" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -263,6 +266,14 @@
       <option name="presentableId" value="Default" />
       <updated>1552301893551</updated>
     </task>
+    <task id="LOCAL-00001" summary="Fixing Date sending">
+      <created>1552310752984</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1552310752984</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -307,6 +318,10 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixing Date sending" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing Date sending" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/RegistrationFormController.java">
@@ -363,8 +378,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ChatWindowController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="110" column="74" selection-start-line="110" selection-start-column="74" selection-end-line="110" selection-end-column="74" />
+        <state relative-caret-position="230">
+          <caret line="112" column="37" lean-forward="true" selection-start-line="112" selection-start-column="37" selection-end-line="112" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
