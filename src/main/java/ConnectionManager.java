@@ -9,65 +9,65 @@ import org.apache.mina.transport.socket.nio.NioSocketConnector;
 import java.net.InetSocketAddress;
 import java.nio.charset.Charset;
 
-public class ConnectionManager implements ConnectionConfig {
+public class ConnectionManager {
 
-  private IoSession session;
-  private ChatWindowController chatWindowController;
-  private RegistrationFormController registrationFormController;
-  private LoginScreenController loginScreenController;
+    private IoSession session;
+    private static ConnectionManager instance = new ConnectionManager();
 
-  public static void closeConnection(IoSession session) {
-    if (session != null) {
-      session.closeNow();
+    private ConnectionManager() {
+
     }
-  }
 
-  public IoSession getSession() {
-    return session;
-  }
-
-  public ConnectionManager(ChatWindowController chatWindowController, RegistrationFormController registrationFormController, LoginScreenController loginScreenController) {
-    this.registrationFormController = registrationFormController;
-    this.chatWindowController = chatWindowController;
-    this.loginScreenController=loginScreenController;
-    StartConnection();
-  }
-
-  public void StartConnection(){
-    try {
-      this.session = connectAndGetSession(CONNECT_TIMEOUT, HOSTNAME, PORT);
-    } catch (RuntimeIoException e){
-      this.session=null;
+    public static ConnectionManager getInstance() {
+        return instance;
     }
-  }
-  public void DisconnectFromServer(){
-    if (this.session!=null) {
-      this.session.closeNow();
-    }
-    System.out.println("Connection closed");
-  }
 
-  private IoSession connectAndGetSession(int CONNECT_TIMEOUT, String HOSTNAME, int PORT) throws RuntimeIoException{
-    NioSocketConnector connector=new NioSocketConnector();
-    connector.setConnectTimeoutMillis(CONNECT_TIMEOUT);
-    TextLineCodecFactory textLineCodecFactory=new TextLineCodecFactory(Charset.forName("UTF-8"));
-    textLineCodecFactory.setDecoderMaxLineLength(MAXSTRING);
-    textLineCodecFactory.setEncoderMaxLineLength(MAXSTRING);
-    connector.getFilterChain().addLast("codec", new ProtocolCodecFilter(textLineCodecFactory));
-    connector.setHandler(new ClientHandler(chatWindowController,registrationFormController,loginScreenController));
-    for (; ; ) {
-      try {
-        ConnectFuture future = connector.connect(new InetSocketAddress(HOSTNAME, PORT));
-        future.awaitUninterruptibly();
-        session=future.getSession();
-        break;
-      } catch (RuntimeIoException e) {
-        System.err.println("Failed to connect");
-        e.printStackTrace();
-        throw new RuntimeIoException();
-      }
+    public static void closeConnection(IoSession session) {
+        if (session != null) {
+            session.closeNow();
+        }
     }
-    return session;
-  }
+
+    public IoSession getSession() {
+        return session;
+    }
+
+    public void StartConnection() {
+        try {
+            this.session = connectAndGetSession(ConnectionConfig.CONNECT_TIMEOUT, ConnectionConfig.HOSTNAME, ConnectionConfig.PORT);
+        } catch (RuntimeIoException e) {
+            this.session = null;
+        }
+    }
+
+    public void DisconnectFromServer() {
+        if (this.session != null) {
+            this.session.closeNow();
+        }
+        System.out.println("Connection closed");
+    }
+
+    private IoSession connectAndGetSession(int CONNECT_TIMEOUT, String HOSTNAME, int PORT) throws RuntimeIoException {
+        NioSocketConnector connector = new NioSocketConnector();
+        connector.setConnectTimeoutMillis(CONNECT_TIMEOUT);
+        TextLineCodecFactory textLineCodecFactory = new TextLineCodecFactory(Charset.forName("UTF-8"));
+        textLineCodecFactory.setDecoderMaxLineLength(ConnectionConfig.MAXSTRING);
+        textLineCodecFactory.setEncoderMaxLineLength(ConnectionConfig.MAXSTRING);
+        connector.getFilterChain().addLast("codec", new ProtocolCodecFilter(textLineCodecFactory));
+        connector.setHandler(new ClientHandler());
+        for (; ; ) {
+            try {
+                ConnectFuture future = connector.connect(new InetSocketAddress(HOSTNAME, PORT));
+                future.awaitUninterruptibly();
+                session = future.getSession();
+                break;
+            } catch (RuntimeIoException e) {
+                System.err.println("Failed to connect");
+                e.printStackTrace();
+                throw new RuntimeIoException();
+            }
+        }
+        return session;
+    }
 
 }
