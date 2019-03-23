@@ -1,4 +1,4 @@
-public class LoginStatusBody {
+public final class LoginStatusBody {
     private String username;
     private String status;
 
